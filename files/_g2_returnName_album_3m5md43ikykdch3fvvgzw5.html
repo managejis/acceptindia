@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Gallery Search</title>
+<link rel="stylesheet" type="text/css" href="../../gallery/modules/core/data/gallery.css"/>
+<link rel="stylesheet" type="text/css" href="../../gallery/modules/icons/iconpacks/silk/icons.css"/>
+<script type="text/javascript" src="http://www.acceptindia.org/gallery/modules/search/HighlightResults.js"></script>
+<script type="text/javascript" src="../../gallery/modules/search/SearchBlock.js"></script>
+<script type="text/javascript" src="../../gallery/themes/carbon/theme.js"></script>
+<link rel="stylesheet" type="text/css" href="../../gallery/themes/carbon/theme.css"/>
+</head>
+<body class="gallery">
+<div id="gallery">
+<div id="gsHeader">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" valign="top" width="50%">
+<a href="../../gallery/main/">
+<img src="../../gallery/images/galleryLogo_sm.gif" width="107" height="48" alt=""/>
+</a>
+</td>
+<td align="right" valign="top">
+</td>
+</tr>
+</table>
+</div>
+<div id="gsNavBar" class="gcBorder1">
+<div class="gbSystemLinks">
+<span class="block-core-SystemLink">
+<a href="/">Login</a>
+</span>
+&laquo;
+<span class="block-core-SystemLink">
+<a href="../../gallery/main_g2_jsWarning_true/" onclick="toggleSidebar('sidebar'); return false;">Sidebar</a>
+</span>
+</div>
+<div class="gbBreadCrumb">
+<div class="block-core-BreadCrumb">
+<a href="../../gallery/main/" class="BreadCrumb-1">
+ACCEPT PHOTO GALLERY</a>
+</div>
+</div>
+</div>
+<table class="gcBackground1" width="100%" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td>
+<form id="SearchScan" action="../../gallery/main/" method="post">
+<div id="gsContent" class="gcBorder1">
+<div class="gbBlock gcBackground1">
+<h2> Search the Gallery </h2>
+</div>
+<input type="hidden" name="g2_navId" value="xed79d15f"/>
+<input type="hidden" name="g2_formUrl" value="/gallery/main.php?g2_view=search.SearchScan&amp;g2_form%5BuseDefaultSettings%5D=1"/>
+<input type="hidden" name="g2_authToken" value="8171f00e6310"/>
+<input type="hidden" name="g2_controller" value="search.SearchScan"/>
+<input type="hidden" name="g2_form[formName]" value="SearchScan"/>
+<script type="text/javascript">
+// <![CDATA[
+function setCheck(val) {
+document.getElementById('cb_GalleryCoreSearch_descriptions').checked = val;
+document.getElementById('cb_GalleryCoreSearch_keywords').checked = val;
+document.getElementById('cb_GalleryCoreSearch_summaries').checked = val;
+document.getElementById('cb_GalleryCoreSearch_titles').checked = val;
+document.getElementById('cb_comment_comments').checked = val;
+}
+function invertCheck() {
+var o;
+o = document.getElementById('cb_GalleryCoreSearch_descriptions'); o.checked = !o.checked;
+o = document.getElementById('cb_GalleryCoreSearch_keywords'); o.checked = !o.checked;
+o = document.getElementById('cb_GalleryCoreSearch_summaries'); o.checked = !o.checked;
+o = document.getElementById('cb_GalleryCoreSearch_titles'); o.checked = !o.checked;
+o = document.getElementById('cb_comment_comments'); o.checked = !o.checked;
+}
+// ]]>
+</script>
+<div class="gbBlock">
+<input type="text" size="50" name="g2_form[searchCriteria]" value=""/>
+<script type="text/javascript">
+document.getElementById('SearchScan')['g2_form[searchCriteria]'].focus();
+</script>
+<input type="submit" class="inputTypeSubmit" name="g2_form[action][search]" value="Search"/>
+<div style="margin: 0.5em 0">
+<input type="checkbox" id="cb_GalleryCoreSearch_descriptions" name="g2_form[options][GalleryCoreSearch][descriptions]" checked="checked"/>
+<label for="cb_GalleryCoreSearch_descriptions">
+Search descriptions
+</label>
+<input type="checkbox" id="cb_GalleryCoreSearch_keywords" name="g2_form[options][GalleryCoreSearch][keywords]" checked="checked"/>
+<label for="cb_GalleryCoreSearch_keywords">
+Search keywords
+</label>
+<input type="checkbox" id="cb_GalleryCoreSearch_summaries" name="g2_form[options][GalleryCoreSearch][summaries]" checked="checked"/>
+<label for="cb_GalleryCoreSearch_summaries">
+Search summaries
+</label>
+<input type="checkbox" id="cb_GalleryCoreSearch_titles" name="g2_form[options][GalleryCoreSearch][titles]" checked="checked"/>
+<label for="cb_GalleryCoreSearch_titles">
+Search titles
+</label>
+<input type="checkbox" id="cb_comment_comments" name="g2_form[options][comment][comments]" checked="checked"/>
+<label for="cb_comment_comments">
+Search comments
+</label>
+</div>
+<div>
+<a href="javascript:setCheck(1)">Check All</a>
+&nbsp;
+<a href="javascript:setCheck(0)">Uncheck All</a>
+&nbsp;
+<a href="javascript:invertCheck()">Invert</a>
+</div>
+</div>
+</div>
+</form></td>
+</tr>
+</table>
+<div id="sidebar" class="gcPopupBackground" style="position:absolute; left:-190px; top:106px; padding:1px;">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" style="padding-left:5px;">
+<h2>Actions</h2>
+</td>
+<td align="right" style="padding-right:2px;">
+<div class="buttonHideSidebar"><a href="javascript: slideOut('sidebar')" title="Close"></a></div>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="gcBackground2" style="padding-bottom:5px">
+<div id="gsSidebar" class="gcBorder1">
+<div class="block-search-SearchBlock gbBlock">
+<form id="search_SearchBlock" action="../../gallery/main/" method="post" onsubmit="return search_SearchBlock_checkForm()">
+<div>
+<input type="hidden" name="g2_navId" value="xed79d15f"/>
+<input type="hidden" name="g2_formUrl" value="/gallery/main.php?g2_view=search.SearchScan&amp;g2_form%5BuseDefaultSettings%5D=1"/>
+<input type="hidden" name="g2_authToken" value="8171f00e6310"/>
+<input type="hidden" name="g2_view" value="search.SearchScan"/>
+<input type="hidden" name="g2_form[formName]" value="search_SearchBlock"/>
+<input type="text" id="searchCriteria" size="18" name="g2_form[searchCriteria]" value="Search the Gallery" onfocus="search_SearchBlock_focus()" onblur="search_SearchBlock_blur()" class="textbox"/>
+<input type="hidden" name="g2_form[useDefaultSettings]" value="1"/>
+</div>
+<div>
+<a href="/" class="gbAdminLink gbLink-search_SearchScan advanced">Advanced Search</a>
+</div>
+</form>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="gsFooter" class="gcBorder1">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50%">
+<a href="http://gallery.sourceforge.net/"><img src="../../gallery/images/gallery.gif" alt="Powered by Gallery v2.2" title="Powered by Gallery v2.2" style="border-style: none" width="80" height="15"/></a>
+</td>
+<td align="right">
+All images are copyrighted
+</td>
+</tr>
+</table>
+</div>
+  </div>
+<script type="text/javascript">
+// <![CDATA[
+search_SearchBlock_init('Search the Gallery', 'Please enter a search term.');
+// ]]>
+</script>
+</body>
+</html>

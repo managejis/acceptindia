@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title> Welcome to the Gallery Upgrader </title>
+    <link rel="stylesheet" type="text/css" href="http://www.acceptindia.org/gallery/upgrade/upgrade.css"/>
+  </head>
+  <body>
+    <div id="box">
+      <table id="regularTable" class="boxTable" cellspacing="0">
+        <tr>
+  <td class="header" colspan="2">
+    <table id="helpbar" cellspacing="0">
+      <tr class="help">
+        <td>
+          <span class="helpBox">?</span>
+        </td>
+        <td>
+          <a href="/" target="_blank">Upgrader Help</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="helpBox">X</span>
+        </td>
+        <td>
+          <a href="/">Start Over</a>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>	<tr>
+	  <td id="navbar">
+	    <div>
+  <table cellspacing="0">
+    <tr>
+      <td class="heading" colspan="2">
+        Upgrade Steps      </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  <span class="success">&radic;</span>
+              </td>
+      <td class="navtext">
+                          <a href="/" class="current">
+                Welcome                  </a>
+              </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  1              </td>
+      <td class="navtext">
+                          <a href="/">
+                Authenticate                  </a>
+              </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  2              </td>
+      <td class="navtext">
+                        System Checks              </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  3              </td>
+      <td class="navtext">
+                        Upgrade Core              </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  4              </td>
+      <td class="navtext">
+                        Upgrade Plugins              </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  5              </td>
+      <td class="navtext">
+                        Empty Cache              </td>
+    </tr>
+        <tr>
+      <td class="navnum">
+                  6              </td>
+      <td class="navtext">
+                        Finish Upgrade              </td>
+    </tr>
+      </table>
+</div>
+	  </td>
+	  <td class="main">
+	    <table id="statusTable" cellspacing="0">
+	      <tr>
+				<td class="progressToGo" style="width:100%">&nbsp;</td>
+			      </tr>
+	    </table>
+      <p id="progressStatus">Upgrade 0% complete</p>
+	        <h1>Welcome</h1>
+    <p>
+      Upgrading Gallery 2 requires 6 steps. This upgrade tool will guide you through these steps and provide assistance along the way if additional steps are required. Please read the <a href="/" target="_blank">Help File</a> before proceeding.    </p>
+        <p>
+      If you have a busy site, consider putting your Gallery in maintenance mode. This gives visitors a message that the site is temporarily offline, rather than showing everybody this upgrade page. Edit your config.php file to activate maintenance mode.    </p>
+            <form method="post" action="/"><p>
+      Select Language:      <input type="hidden" name="step" value="0"/>
+      <select name="language" onchange="this.form.submit()" style="direction:ltr">
+	<option value="en_US">English (US)</option>
+<option value="en_GB">English (UK)</option>
+<option value="af_ZA">Afrikaans</option>
+<option value="ca_ES">Catalan</option>
+<option value="cs_CZ">&#x010c;esky</option>
+<option value="da_DK">Dansk</option>
+<option value="de_DE">Deutsch</option>
+<option value="es_ES">Espa&#241;ol</option>
+<option value="es_MX">Espa&#241;ol (MX)</option>
+<option value="es_AR">Espa&#241;ol (AR)</option>
+<option value="et_EE">Eesti</option>
+<option value="eu_ES">Euskara</option>
+<option value="fr_FR">Fran&#231;ais</option>
+<option value="ga_IE">Gaeilge</option>
+<option value="el_GR">Greek</option>
+<option value="is_IS">Icelandic</option>
+<option value="it_IT">Italiano</option>
+<option value="lv_LV">Latvie&#353;u</option>
+<option value="lt_LT">Lietuvi&#371;</option>
+<option value="hu_HU">Magyar</option>
+<option value="nl_NL">Nederlands</option>
+<option value="no_NO">Norsk bokm&#229;l</option>
+<option value="pl_PL">Polski</option>
+<option value="pt_BR">Portugu&#234;s Brasileiro</option>
+<option value="pt_PT">Portugu&#234;s</option>
+<option value="ro_RO">Rom&#226;n&#259;</option>
+<option value="sk_SK">Sloven&#269;ina</option>
+<option value="sl_SI">Sloven&#353;&#269;ina</option>
+<option value="sr_YU">Srpski</option>
+<option value="fi_FI">Suomi</option>
+<option value="sv_SE">Svenska</option>
+<option value="th_TH">Thai</option>
+<option value="uk_UA">Українська</option>
+<option value="vi_VN">Ti&#7871;ng Vi&#7879;t</option>
+<option value="tr_TR">T&#252;rk&#231;e</option>
+<option value="bg_BG">&#x0411;&#x044a;&#x043b;&#x0433;&#x0430;&#x0440;&#x0441;&#x043a;&#x0438;</option>
+<option value="ru_RU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option>
+<option value="zh_CN">&#31616;&#20307;&#20013;&#25991;</option>
+<option value="zh_TW">&#32321;&#39636;&#20013;&#25991;</option>
+<option value="ko_KR">&#xd55c;&#xad6d;&#xb9d0;</option>
+<option value="ja_JP">&#x65e5;&#x672c;&#x8a9e;</option>
+<option value="ar_SA">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</option>
+<option value="he_IL">&#1506;&#1489;&#1512;&#1497;&#1514;</option>
+<option value="fa_IR">&#1601;&#1575;&#1585;&#1587;&#1610;</option>
+      </select>
+      <noscript><input type="submit" value="Go"/>
+    </p></form>
+	    	    <div class="go">
+	      		<div class="btn btn-continue"><div><div><div><div><div><div><div><div>
+		  <a href="/">Continue to Step 1&raquo;</a>
+		</div></div></div></div></div></div></div></div></div>
+	      </div>
+	    	  </td>
+	</tr>
+      </table>
+    </div>
+    <div id="footer">
+      Gallery: <strong>your photos</strong> on <strong>your website</strong>      &raquo; <a target="_blank" href="http://gallery.sourceforge.net/">gallery.sourceforge.net</a>
+    </div>
+  </body>
+</html>

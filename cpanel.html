@@ -1,0 +1,195 @@
+<html>
+                <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <noscript>	
+                <meta http-equiv="refresh" content="120;url=http://acceptindia.org:2082/"/>
+                </noscript>
+                <style>
+                body {font-family:arial;margin:0;padding:0;background:#dcf4fa;}
+            .statusBox {
+width: 80px;
+            }
+            .fb {
+width:40%;
+float:left;
+      text-align:center;
+margin:5px 20px 5px 20px; 
+padding:20px 0 20px 0px;
+background:#d3eaf0;
+color:#00566a;
+height:100px;
+            }
+            .fb2 {
+width:40%;
+float:right;
+      text-align:center;
+margin:5px 20px 5px 20px; 
+padding:20px 0 20px 0px;
+background:#d3eaf0;
+color:#00566a;
+height:100px;
+            }
+#opts {
+width:100%;
+}
+#redirecting {
+width: 100%;
+height:100px;
+       text-align:center;
+       padding-top: 50px;
+       font-weight:bold;
+color:#000;
+      font-size:18px;
+}
+.button {
+width: 0 auto;
+margin:5px 0 0 0;
+       text-align:center;
+       font-size:18px;
+       font-weight:bold;
+color:#00566a;
+width:100px;
+height:25px;
+       background-color:#dcf4fa;
+       border-style:solid;
+       border-color:#c1effa;
+       border-width:2px;
+       margin-left:auto;
+       margin-right:auto;
+}
+.button a {
+color:#00566a;
+      text-decoration:none;
+}
+h1 { height:30px;	padding:15px;border-bottom:solid 10px #00566a;color:#00566a;}
+p {margin:15px;padding:15px;border-bottom:dashed 1px #cce5eb;}
+.container {
+width:70%;
+      margin-left:auto;
+      margin-right:auto;
+}
+.txtb {
+    padding: 20px;
+}
+#autore {
+}
+</style>		
+</head>
+<body>
+<div id="page">
+<div id="autore">
+<h1>   
+<span id="actor">Connection Selection</span> <span id="statusBox" style="display:inline;">  ....</span>
+</h1>
+</div>
+<div id="opts">
+<div class="container">
+<div id="nofirewall" class="fb">
+<div class="txtb">
+If you are not behind a firewall that blocks port 2082
+</div>
+<div class="button">
+<a href="/" class="createbutton">Enter Here</a>
+</div>
+</div>
+<div id="firewall" class="fb2">
+<div class="txtb">
+If you are behind a firewall
+and can not connect to port 2082
+</div>
+<div class="button">
+<a href="/" class="createbutton">Enter Here</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var counter = 0;
+var statusBoxEl=document.getElementById('statusBox');
+var iFrameEl = document.getElementById('checkfr');
+var statusEl = document.getElementById('statusBox');
+var rurlEl = document.getElementById('rurl');
+var autoreEl = document.getElementById('autore');
+var actorEl = document.getElementById('actor');
+if (actorEl) { actorEl.innerHTML='Detecting your internet connection '; }
+var loadedok=0;
+var tried_proxy=0;
+function try_proxy(msg) {
+    if (loadedok || tried_proxy) { return; }
+    tried_proxy=1;
+    var statusEl = document.getElementById('statusBox');
+    if (statusEl) {
+        statusEl.innerHTML='';
+    }
+    window.location.href="http://cpanel.acceptindia.org";
+}
+function init_try_proxy(fromwhere) {
+    setTimeout(try_proxy,15000);
+}
+function checkIframeFailed() {
+    if (loadedok) { return 0; }
+    var errHtml;
+    try {
+        var iFrameDoc = (iFrameEl.contentDocument || iFrameEl.contentWindow || iFrameEl);
+        if (iFrameDoc.document) { iFrameDoc=iFrameDoc.document; }
+        if (iFrameDoc.innerHTML) { errHtml=iFrameDoc.innerHTML; }
+        if (errHtml) {
+            if ( errHtml.match(/cPanel Loader/))  {
+                if (tried_proxy) {
+                    window.location.href="http://cpanel.acceptindia.org";
+                } else {
+                    window.location.href="http://acceptindia.org:2082";
+                }
+            } else if ( errHtml.match(/(404|connection|not|unavailable)/i)) {
+                return 1;	
+            }	
+        }
+    } catch (e) {
+        if (e && e.message && e.message.match(/denied/i)) {
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
+function checkif() {
+    try {
+        if (iFrameEl && iFrameEl.loadedok) {
+            if (tried_proxy) {
+                window.location.href="http://cpanel.acceptindia.org";
+            } else {
+                window.location.href="http://acceptindia.org:2082";
+            }
+        }
+    } catch(e) {
+    }
+    if (checkIframeFailed()) {
+        init_try_proxy('checkif');
+    } else {
+        setTimeout(checkif,1000);
+    }
+}
+function updatecount() {
+    var dots='';
+    counter++;
+    if (counter == 15) { counter=0; }
+    for(i=0;i<=counter;i++) {
+        dots+='.';
+    } 
+    statusBoxEl.innerHTML=dots;
+}
+if (0 && 0 && (navigator.userAgent.match(/Firefox\/[3-9]/) ||navigator.appVersion.indexOf("Safari")!=-1)){
+    window.location.href="http://acceptindia.org:2082";
+    var pageEl = document.getElementById('page');
+    if (pageEl) { pageEl.innerHTML=''; }
+} else {
+    setTimeout(checkif,1000);
+    setTimeout(try_proxy,90000);
+}
+if (statusBoxEl) {
+    setInterval(updatecount,80);
+}
+</script>
+</body>
+</html>

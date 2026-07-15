@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<script type="text/JavaScript">
+//<![CDATA[
+var agent = navigator.userAgent.toLowerCase();
+var appver = parseInt(navigator.appVersion);
+var bCanBlend = (agent.indexOf('msie') != -1) && (agent.indexOf('opera') == -1) &&
+(appver >= 4) && (agent.indexOf('msie 4') == -1) &&
+(agent.indexOf('msie 5.0') == -1);
+var filterNames = new Array(16), filters = new Array(16);
+filterNames[0] = 'Blend';
+filters[0] = 'progid:DXImageTransform.Microsoft.Fade(duration=1)';
+filterNames[1] = 'Blinds';
+filters[1] = 'progid:DXImageTransform.Microsoft.Blinds(duration=1,bands=20)';
+filterNames[2] = 'Checkerboard';
+filters[2] = 'progid:DXImageTransform.Microsoft.Checkerboard(duration=1,squaresX=20,squaresY=20)';
+filterNames[3] = 'Diagonal';
+filters[3] = 'progid:DXImageTransform.Microsoft.Strips(duration=1,motion=rightdown)';
+filterNames[4] = 'Doors';
+filters[4] = 'progid:DXImageTransform.Microsoft.Barn(duration=1,orientation=vertical)';
+filterNames[5] = 'Gradient';
+filters[5] = 'progid:DXImageTransform.Microsoft.GradientWipe(duration=1)';
+filterNames[6] = 'Iris';
+filters[6] = 'progid:DXImageTransform.Microsoft.Iris(duration=1,motion=out)';
+filterNames[7] = 'Pinwheel';
+filters[7] = 'progid:DXImageTransform.Microsoft.Wheel(duration=1,spokes=12)';
+filterNames[8] = 'Pixelate';
+filters[8] = 'progid:DXImageTransform.Microsoft.Pixelate(duration=1,maxSquare=10)';
+filterNames[9] = 'Radial';
+filters[9] = 'progid:DXImageTransform.Microsoft.RadialWipe(duration=1,wipeStyle=clock)';
+filterNames[10] = 'Rain';
+filters[10] = 'progid:DXImageTransform.Microsoft.RandomBars(duration=1,orientation=vertical)';
+filterNames[11] = 'Slide';
+filters[11] = 'progid:DXImageTransform.Microsoft.Slide(duration=1,slideStyle=push)';
+filterNames[12] = 'Snow';
+filters[12] = 'progid:DXImageTransform.Microsoft.RandomDissolve(duration=1,orientation=vertical)';
+filterNames[13] = 'Spiral';
+filters[13] = 'progid:DXImageTransform.Microsoft.Spiral(duration=1,gridSizeX=40,gridSizeY=40)';
+filterNames[14] = 'Stretch';
+filters[14] = 'progid:DXImageTransform.Microsoft.Stretch(duration=1,stretchStyle=push)';
+filterNames[15] = 'RANDOM';
+filters[15] = 'RANDOM';
+// ]]>
+</script>
+<title>Slideshow for ACCEPT PHOTO GALLERY</title>
+<link rel="stylesheet" type="text/css" href="../../gallery/modules/core/data/gallery.css"/>
+<link rel="stylesheet" type="text/css" href="../../gallery/modules/icons/iconpacks/silk/icons.css"/>
+<script type="text/javascript" src="../../gallery/modules/search/SearchBlock.js"></script>
+<script type="text/javascript" src="../../gallery/themes/carbon/theme.js"></script>
+<link rel="stylesheet" type="text/css" href="../../gallery/themes/carbon/theme.css"/>
+</head>
+<body class="gallery">
+<div id="gallery">
+<div id="gsContent">
+This album has no photos to show in a slideshow.
+<a href="../../gallery/main/">
+Back to Album View
+</a>
+</div>
+  </div>
+</body>
+</html>
